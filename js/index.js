@@ -43,14 +43,6 @@ function parseViews(views) {
 
 let sortedArray = [];
 
-const sortAndDisplayData = () => {
-  // Sort sortedArray by views in ascending order
-  sortedArray.sort((a, b) => {
-    return parseViews(a.others?.views) - parseViews(b.others?.views);
-  });
-  displaySortedCards();
-};
-
 const displaySortedCards = () => {
   const cards = document.getElementById("cards");
   const AddNullData = document.getElementById("AddNullData");
@@ -125,7 +117,7 @@ const displayCards = async (categoryId) => {
   const data = await res.json();
   const allDataById = data.data;
   sortedArray = allDataById.slice();
-  sortAndDisplayData();
+  displaySortedCards();
 };
 
 loadData();
