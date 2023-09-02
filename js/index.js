@@ -131,24 +131,15 @@ const displayCards = async (categoryId) => {
 loadData();
 displayCards("1000");
 
-// Function to trigger sorting and displaying data based on views
-const sortDataByViews = () => {
-  sortAndDisplayData();
-};
-
-// ... Your previous code ...
-
 // Function to sort and display the data in descending order of views
 const sortAndDisplayDataDescending = () => {
   // Sort sortedArray by views in descending order
   sortedArray.sort((a, b) => {
     return parseViews(b.others?.views) - parseViews(a.others?.views);
   });
-  console.log(sortedArray);
+
   displaySortedCards();
 };
-
-// ... Your previous code ...
 
 // Function to trigger sorting and displaying data in descending order of views
 const sortDataByViewsDescending = () => {
